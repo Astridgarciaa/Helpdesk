@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
+           targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
+
+    <xs:element name="getUsuarioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombreDeUsuario" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUsuarioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuario" type="tns:usuario"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="usuario">
+        <xs:sequence>
+            <xs:element name="usuarioId" type="xs:int"/>
+            <xs:element name="nombreUsuario" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+            <xs:element name="tipoUsuario" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

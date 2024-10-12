@@ -13,7 +13,4 @@ public class SolicitanteService {
         this.solicitanteRepository = solicitanteRepository;
     }
 
-    public Solicitante getByUsuarioId(String usuarioId) {
-
-    }
 }

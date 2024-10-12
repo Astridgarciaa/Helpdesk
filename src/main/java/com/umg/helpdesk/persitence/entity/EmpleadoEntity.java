@@ -25,7 +25,6 @@ public class EmpleadoEntity {
     @JoinColumn(name = "usuario_id", insertable = false, updatable = false)
     private UsuarioEntity usuario;
 
-
     public Integer getEmpleadoId() {
         return empleadoId;
     }

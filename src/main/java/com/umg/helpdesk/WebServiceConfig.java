@@ -27,7 +27,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema usuariosSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UsuariosPort");
-        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setLocationUri("/ws/usuarios");
         wsdl11Definition.setTargetNamespace("http://umg.com/soapservice");
         wsdl11Definition.setSchema(usuariosSchema);
         return wsdl11Definition;
@@ -36,6 +36,21 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     @Bean
     public XsdSchema usuariosSchema() {
         return new SimpleXsdSchema(new ClassPathResource("usuarios.xsd"));
+    }
+
+    @Bean(name = "empleados")
+    public DefaultWsdl11Definition defaultWsdl11Definition2(XsdSchema empleadosSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("EmpleadosPort");
+        wsdl11Definition.setLocationUri("/ws/empleados");
+        wsdl11Definition.setTargetNamespace("http://umg.com/soapservice");
+        wsdl11Definition.setSchema(empleadosSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema empleadosSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("empleados.xsd"));
     }
 }
 

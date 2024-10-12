@@ -29,23 +29,30 @@ sourceSets {
 
 task genJaxb {
 	def sourcesDir = "${buildDir}/generated-sources/jaxb"
-	def schema = "src/main/resources/usuarios.xsd"
+	def schemaDir = file('src/main/resources') // Directorio que contiene los XSDs
 
 	outputs.dir sourcesDir
 
-	doLast() {
+	doLast {
 		project.ant {
 			taskdef name: "xjc", classname: "com.sun.tools.xjc.XJCTask",
 					classpath: configurations.jaxb.asPath
 			mkdir(dir: sourcesDir)
 
-			xjc(destdir: sourcesDir, schema: schema) {
+			// Procesar todos los archivos .xsd usando un fileset
+			xjc(destdir: sourcesDir) {
+				schema(dir: schemaDir) {
+					include(name: "**/*.xsd") // Incluye todos los archivos .xsd en el directorio
+				}
 				arg(value: "-wsdl")
 				produces(dir: sourcesDir, includes: "**/*.java")
 			}
 		}
 	}
 }
+
+
+
 
 compileJava.dependsOn genJaxb
 // end::xsd[]

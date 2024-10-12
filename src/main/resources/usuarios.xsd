@@ -8,46 +8,11 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
     <xs:element name="getUsuarioResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="usuario" type="tns:usuario"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="postUsuarioRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="usuarioId" type="xs:int"/>
-                <xs:element name="nombreUsuario" type="xs:string"/>
-                <xs:element name="password" type="xs:string"/>
-                <xs:element name="tipoUsuario" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="usuarioLoginRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="nombreUsuario" type="xs:string"/>
-                <xs:element name="password" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="postUsuarioResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="response" type="tns:usuario"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="usuarioLoginResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="response" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -17,6 +17,25 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="getUsuarioLoginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombreDeUsuario" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUsuarioLoginResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuario" type="tns:usuario"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
     <xs:complexType name="usuario">
         <xs:sequence>
             <xs:element name="usuarioId" type="xs:int"/>

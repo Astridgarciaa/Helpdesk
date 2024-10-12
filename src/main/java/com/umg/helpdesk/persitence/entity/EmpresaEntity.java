@@ -2,8 +2,6 @@ package com.umg.helpdesk.persitence.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "Empresa")
 public class EmpresaEntity {
@@ -13,42 +11,23 @@ public class EmpresaEntity {
     @Column(name = "empresa_id")
     private Integer empresaId;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "direccion")
     private String direccion;
-
-    @OneToMany(mappedBy = "empresaEntity")
-    private List<EmpleadoEntity> empleados;
 
     public Integer getEmpresaId() {
         return empresaId;
     }
 
-    public void setEmpresaId(Integer empresaId) {
-        this.empresaId = empresaId;
-    }
+    public void setEmpresaId(Integer empresaId) { this.empresaId = empresaId; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public void setNombre(String nombre) { this.nombre = nombre;}
 
-    public String getDireccion() {
-        return direccion;
-    }
+    public String getDireccion() { return direccion; }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public List<EmpleadoEntity> getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(List<EmpleadoEntity> empleados) {
-        this.empleados = empleados;
-    }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
 }

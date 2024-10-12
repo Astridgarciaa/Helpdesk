@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
+           targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
+
+
+        <xs:complexType name="Ticket">
+            <xs:sequence>
+                <xs:element name="ticketId" type="xs:int"/>
+                <xs:element name="descripcion" type="xs:string"/>
+                <xs:element name="estado" type="xs:string"/>
+                <xs:element name="fecha" type="xs:date"/>
+                <xs:element name="solicitanteId" type="xs:int"/>
+                <xs:element name="empleadoId" type="xs:int"/>
+                <xs:element name="incidenteId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+</xs:schema>

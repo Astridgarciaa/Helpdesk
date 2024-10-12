@@ -1,0 +1,45 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
+           targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
+
+    <xs:element name="getSolicitanteByUsuarioIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuarioId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSolicitanteByUsuarioIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="solicitante" type="tns:solicitante"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSolicitanteByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="solicitanteId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getSolicitanteByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="solicitante" type="tns:solicitante"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="solicitante">
+        <xs:sequence>
+            <xs:element name="solicitanteId" type="xs:int"/>
+            <xs:element name="nombreSolicitante" type="xs:string"/>
+            <xs:element name="apellidoSolicitante" type="xs:string"/>
+            <xs:element name="correo" type="xs:string"/>
+            <xs:element name="telefono" type="xs:string"/>
+            <xs:element name="usuarioId" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,6 +1,27 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
 
+    <!-- crear usuario -->
+    <xs:element name="postUsuarioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombreUsuario" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="tipoUsuario" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postUsuarioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="usuario" type="tns:usuario"/>
+            </xs:sequence>
+
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar usuario por nombre de usuario -->
     <xs:element name="getUsuarioRequest">
         <xs:complexType>
             <xs:sequence>
@@ -17,6 +38,7 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- login de usuario  -->
     <xs:element name="getUsuarioLoginRequest">
         <xs:complexType>
             <xs:sequence>

@@ -1,6 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
 
+    <!-- buscar solicitante por usuarioid -->
     <xs:element name="getSolicitanteByUsuarioIdRequest">
         <xs:complexType>
             <xs:sequence>
@@ -17,6 +18,24 @@
         </xs:complexType>
     </xs:element>
 
+    <!-- buscar solicitante por correo -->
+    <xs:element name="getSolicitanteByCorreoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="correo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSolicitanteByCorreoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="solicitante" type="tns:solicitante"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar solicitante por id  -->
     <xs:element name="getSolicitanteByIdRequest">
         <xs:complexType>
             <xs:sequence>
@@ -31,6 +50,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
 
     <xs:complexType name="solicitante">
         <xs:sequence>

@@ -2,6 +2,8 @@ package com.umg.helpdesk.persitence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Solicitante")
 public class SolicitanteEntity {
@@ -23,9 +25,8 @@ public class SolicitanteEntity {
     @Column(name = "telefono")
     private String telefono;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", insertable = false, updatable = false)
-    private UsuarioEntity usuarioEntity;
+    @OneToMany(mappedBy = "solicitante")
+    private List<TicketEntity> ticketEntityList;
 
     public Integer getSolicitanteId() {
         return solicitanteId;
@@ -67,11 +68,11 @@ public class SolicitanteEntity {
         this.telefono = telefono;
     }
 
-    public UsuarioEntity getUsuarioEntity() {
-        return usuarioEntity;
+    public List<TicketEntity> getTicketEntityList() {
+        return ticketEntityList;
     }
 
-    public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
-        this.usuarioEntity = usuarioEntity;
+    public void setTicketEntityList(List<TicketEntity> ticketEntityList) {
+        this.ticketEntityList = ticketEntityList;
     }
 }

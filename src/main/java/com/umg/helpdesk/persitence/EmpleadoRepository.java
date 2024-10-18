@@ -25,10 +25,6 @@ public class EmpleadoRepository {
         return (List<EmpleadoEntity>) empleadoCrudRepository.findAll();
     }
 
-    public EmpleadoEntity getByUsuario(UsuarioEntity usuarioEntity) {
-        return empleadoCrudRepository.findByUsuario(usuarioEntity);
-    }
-
     public EmpleadoEntity save(EmpleadoEntity empleado) {
         return empleadoCrudRepository.save(empleado);
     }

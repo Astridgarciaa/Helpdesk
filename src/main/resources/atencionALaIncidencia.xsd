@@ -1,7 +1,39 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
+    <!-- buscar atencion por Id -->
+    <xs:element name="getAtencionALaIncidenciaByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="atencionId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-        <xs:complexType name="atencionALaIncidencia">
+    <xs:element name="getAtencionALaIncidenciaByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="atencionalancidencia" type="tns:atencionALaIncidencia"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- buscar atencion por ticketId -->
+    <xs:element name="getAtencionALaIncidenciaByticketIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticketId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAtencionALaIncidenciaByticketIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="atencionalancidencia" type="tns:atencionALaIncidencia"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="atencionALaIncidencia">
             <xs:sequence>
                 <xs:element name="atencionId" type="xs:int"/>
                 <xs:element name="observaciones" type="xs:string"/>

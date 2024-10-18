@@ -1,7 +1,43 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
 
-        <xs:complexType name="empresa">
+    <!-- buscar empresa por id  -->
+    <xs:element name="getEmpresaByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="empresaId" type="xs:int"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmpresaByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Empresa" type="tns:empresa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar empresa por nombre  -->
+    <xs:element name="getEmpresaByNombreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string" />
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmpresaByNombreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Empresa" type="tns:empresa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="empresa">
             <xs:sequence>
                 <xs:element name="empresaId" type="xs:int"/>
                 <xs:element name="nombre" type="xs:string" />

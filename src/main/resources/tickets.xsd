@@ -1,8 +1,115 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
+<!-- CREAR TICKET -->
+    <xs:element name="postTicketRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="descripcion" type="xs:string"/>
+                <xs:element name="estado" type="xs:string"/>
+                <xs:element name="fecha" type="xs:date"/>
+                <xs:element name="solicitanteId" type="xs:int"/>
+                <xs:element name="incidenteId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postTicketResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar TICKET por Id -->
+    <xs:element name="getTickeByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticketId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTickeByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 
-        <xs:complexType name="Ticket">
+    <!-- buscar TICKET por ESTADO -->
+    <xs:element name="getTickeByEstadoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="estado" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTickeByEstadoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <!-- buscar TICKET por solicitante id -->
+    <xs:element name="getTicketBySolicitanteIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="solicitanteId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTicketBySolicitanteIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- buscar TICKET por empleado id -->
+    <xs:element name="getTicketByEmpleadoIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="empleadoId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTicketByEmpleadoIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar TICKET por incidente id -->
+    <xs:element name="getTicketByIncidenteIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidenteId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTicketByIncidenteIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" type="tns:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="ticket">
             <xs:sequence>
                 <xs:element name="ticketId" type="xs:int"/>
                 <xs:element name="descripcion" type="xs:string"/>

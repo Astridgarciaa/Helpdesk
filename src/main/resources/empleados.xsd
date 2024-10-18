@@ -1,6 +1,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
-    <xs:element name="getEmpleadoRequest">
+
+    <!-- buscar empleado por id  -->
+    <xs:element name="getEmpleadoByIdRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="empleadoId" type="xs:int"/>
@@ -8,7 +10,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEmpleadoResponse">
+    <xs:element name="getEmpleadoByIdResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="empleado" type="tns:empleado"/>
@@ -16,7 +18,25 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEmpleadosRequest">
+    <!-- buscar empleado por cargo  -->
+    <xs:element name="getEmpleadoByCargoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cargo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmpleadoByCargoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="empleado" type="tns:empleado"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- buscar empresa por empresa -->
+    <xs:element name="getEmpleadosByEmpresaIdRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="empresaId" type="xs:int"/>
@@ -24,15 +44,15 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEmpleadosResponse">
+    <xs:element name="getEmpleadoByEmpresaIdResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="empleados" type="tns:empleado"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
-    <xs:element name="getEmpleadosPorUsuarioRequest">
+    <!-- buscar empresa por usuario id  -->
+    <xs:element name="getEmpleadosByUsuarioIdRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="usuarioId" type="xs:int"/>
@@ -40,7 +60,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEmpleadosPorUsuarioResponse">
+    <xs:element name="getEmpleadosByUsuarioIdResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="empleado" type="tns:empleado"/>

@@ -1,6 +1,41 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umg.com/soapservice"
            targetNamespace="http://umg.com/soapservice" elementFormDefault="qualified">
 
+    <!-- buscar incidente por id -->
+    <xs:element name="getIncidenteByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidenteId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIncidenteByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidente" type="tns:incidente"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- buscar incidente por tipo -->
+    <xs:element name="getIncidenteByTipoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipo" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIncidenteByTipoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidente" type="tns:incidente"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
         <xs:complexType name="incidente">
             <xs:sequence>
                 <xs:element name="incidenteId" type="xs:int"/>

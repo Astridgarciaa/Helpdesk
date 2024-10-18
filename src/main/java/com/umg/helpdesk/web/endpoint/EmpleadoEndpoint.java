@@ -1,8 +1,8 @@
 package com.umg.helpdesk.web.endpoint;
 
 import com.umg.helpdesk.domain.service.EmpleadoService;
-import com.umg.soapservice.GetEmpleadoRequest;
-import com.umg.soapservice.GetEmpleadoResponse;
+import com.umg.soapservice.GetEmpleadoByIdRequest;
+import com.umg.soapservice.GetEmpleadoByIdResponse;
 import com.umg.soapservice.Empleado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -23,8 +23,8 @@ public class EmpleadoEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getEmpleadoRequest")
     @ResponsePayload
-    public GetEmpleadoResponse getEmpleado(@RequestPayload GetEmpleadoRequest request) {
-        GetEmpleadoResponse response = new GetEmpleadoResponse();
+    public GetEmpleadoByIdResponse getEmpleado(@RequestPayload GetEmpleadoByIdRequest request) {
+        GetEmpleadoByIdResponse response = new GetEmpleadoByIdResponse();
         Empleado empleado = empleadoService.getById(request.getEmpleadoId());
         response.setEmpleado(empleado);
         return response;

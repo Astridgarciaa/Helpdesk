@@ -28,18 +28,6 @@ public class EmpleadoService {
     }
 
     public Empleado getByUsername(String nombreDeUsuario) {
-        Usuario usuario = usuarioService.getByUsername(nombreDeUsuario);
-        UsuarioEntity usuarioEntity = new UsuarioEntity();
-        usuarioEntity.setUsuarioId(usuario.getUsuarioId());
-        usuarioEntity.setNombreUsuario(usuario.getNombreUsuario());
-        usuarioEntity.setPassword(usuario.getPassword());
-        usuarioEntity.setTipoUsuario(usuario.getTipoUsuario());
-        EmpleadoEntity empleadoEntity = empleadoRepository.getByUsuario(usuarioEntity);
-        Empleado empleado = new Empleado();
-        empleado.setEmpleadoId(empleadoEntity.getEmpleadoId());
-        empleado.setNombre(empleadoEntity.getNombre());
-        empleado.setApellido(empleadoEntity.getApellido());
-        empleado.setUsuarioId(empleadoEntity.getUsuario().getUsuarioId());
-        return empleado;
+       return null;
     }
 }

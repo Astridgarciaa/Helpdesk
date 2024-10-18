@@ -23,7 +23,7 @@ public class EmpleadoService {
         empleado.setEmpleadoId(empleadoEntity.getEmpleadoId());
         empleado.setNombre(empleadoEntity.getNombre());
         empleado.setApellido(empleadoEntity.getApellido());
-        empleado.setUsuarioId(empleadoEntity.getUsuario().getUsuarioId());
+        empleado.setUsuarioId(empleadoEntity.getUsuarioEntity().getUsuarioId());
         return empleado;
     }
 

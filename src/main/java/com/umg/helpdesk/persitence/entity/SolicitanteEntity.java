@@ -25,7 +25,11 @@ public class SolicitanteEntity {
     @Column(name = "telefono")
     private String telefono;
 
-    @OneToMany(mappedBy = "solicitante")
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private UsuarioEntity usuarioEntity;
+
+    @OneToMany(mappedBy = "solicitanteEntity")
     private List<TicketEntity> ticketEntityList;
 
     public Integer getSolicitanteId() {
@@ -66,6 +70,14 @@ public class SolicitanteEntity {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public UsuarioEntity getUsuarioEntity() {
+        return usuarioEntity;
+    }
+
+    public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
+        this.usuarioEntity = usuarioEntity;
     }
 
     public List<TicketEntity> getTicketEntityList() {

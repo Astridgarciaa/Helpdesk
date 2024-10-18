@@ -25,9 +25,9 @@ public class EmpleadoEntity {
 
     @OneToOne
     @JoinColumn(name = "usuario_id", insertable = false, updatable = false)
-    private UsuarioEntity usuario;
+    private UsuarioEntity usuarioEntity;
 
-    @OneToMany(mappedBy = "empleado")
+    @OneToMany(mappedBy = "empleadoEntity")
     private List<TicketEntity> ticketEntityList;
 
     public Integer getEmpleadoId() {
@@ -70,12 +70,12 @@ public class EmpleadoEntity {
         this.empresaEntity = empresaEntity;
     }
 
-    public UsuarioEntity getUsuario() {
-        return usuario;
+    public UsuarioEntity getUsuarioEntity() {
+        return usuarioEntity;
     }
 
-    public void setUsuario(UsuarioEntity usuario) {
-        this.usuario = usuario;
+    public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
+        this.usuarioEntity = usuarioEntity;
     }
 
     public EmpresaEntity getEmpresaEntity() {

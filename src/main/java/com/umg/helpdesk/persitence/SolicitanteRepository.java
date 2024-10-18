@@ -30,7 +30,7 @@ public class SolicitanteRepository {
     }
 
     public SolicitanteEntity findByUsuarioEntityByUsuarioId(Integer usuarioId){
-        return solicitanteCrudRepository.findByUsuarioEntityByUsuarioId ( usuarioId);
+        return solicitanteCrudRepository.findByUsuarioEntityUsuarioId (usuarioId);
     }
 
     public void delete(Integer id) {

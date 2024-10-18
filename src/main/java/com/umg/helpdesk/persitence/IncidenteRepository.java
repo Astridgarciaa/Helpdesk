@@ -24,9 +24,17 @@ public class IncidenteRepository {
 
     public IncidenteEntity save(IncidenteEntity incidente) {
         return incidenteCrudRepository.save(incidente);
+
     }
+
+    public List<IncidenteEntity> findByTipo(String tipo){
+        return incidenteCrudRepository.findByTipo(tipo);
+    }
+
 
     public void delete(Integer id) {
         incidenteCrudRepository.deleteById(id);
     }
+
+
 }

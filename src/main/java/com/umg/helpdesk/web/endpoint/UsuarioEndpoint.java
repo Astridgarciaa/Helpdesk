@@ -8,8 +8,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.umg.soapservice.GetUsuarioRequest;
-import com.umg.soapservice.GetUsuarioResponse;
+import com.umg.soapservice.GetUsuarioByIdRequest;
+import com.umg.soapservice.GetUsuarioByIdResponse;
 
 @Endpoint
 public class UsuarioEndpoint {
@@ -24,8 +24,8 @@ public class UsuarioEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUsuarioRequest")
     @ResponsePayload
-    public GetUsuarioResponse getUsuario(@RequestPayload GetUsuarioRequest request) {
-        GetUsuarioResponse response = new GetUsuarioResponse();
+    public GetUsuarioByIdResponse getUsuario(@RequestPayload GetUsuarioByIdRequest request) {
+        GetUsuarioByIdResponse response = new GetUsuarioByIdResponse();
         Usuario usuario = usuarioService.getByUsername(request.getNombreDeUsuario());
         response.setUsuario(usuario);
         return response;

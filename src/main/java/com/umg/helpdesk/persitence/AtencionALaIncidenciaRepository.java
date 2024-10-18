@@ -29,4 +29,8 @@ public class AtencionALaIncidenciaRepository {
     public void delete(Integer id) {
         atencionCrudRepository.deleteById(id);
     }
+
+    public  List<AtencionALaIncidenciaEntity> findByTicketEntityTicketId(Integer ticketId){
+        return atencionCrudRepository.findByTicketEntityTicketId(ticketId);
+    }
 }

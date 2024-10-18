@@ -25,8 +25,17 @@ public class SolicitanteRepository {
     public SolicitanteEntity save(SolicitanteEntity solicitante) {
         return solicitanteCrudRepository.save(solicitante);
     }
+    public SolicitanteEntity findByCorreo(String correo){
+        return solicitanteCrudRepository.findByCorreo(correo);
+    }
+
+    public SolicitanteEntity findByUsuarioEntityByUsuarioId(Integer usuarioId){
+        return solicitanteCrudRepository.findByUsuarioEntityByUsuarioId ( usuarioId);
+    }
 
     public void delete(Integer id) {
         solicitanteCrudRepository.deleteById(id);
     }
+
+
 }

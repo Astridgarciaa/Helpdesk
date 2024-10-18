@@ -32,4 +32,18 @@ public class EmpleadoRepository {
     public void delete(Integer id) {
         empleadoCrudRepository.deleteById(id);
     }
+
+    public EmpleadoEntity findByUsuarioEntityUsuarioId(Integer usuarioId){
+        return empleadoCrudRepository.findByUsuarioEntityUsuarioId(usuarioId);
+    }
+
+    public List<EmpleadoEntity> findByCargo(String cargo){
+        return empleadoCrudRepository.findByCargo(cargo);
+    }
+
+    public List<EmpleadoEntity> findByEmpresaEntityEmpresaId(Integer empresaId){
+        return empleadoCrudRepository.findByEmpresaEntityEmpresaId(empresaId);
+    }
+
 }
+

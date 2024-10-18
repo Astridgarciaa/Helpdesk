@@ -22,6 +22,10 @@ public class EmpresaRepository {
         return empresaCrudRepository.save(empresaEntity);
     }
 
+    public EmpresaEntity findByNombre(String nombre){
+        return empresaCrudRepository.findByNombre(nombre);
+    }
+
     public void delete(int id) {
         empresaCrudRepository.deleteById(id);
     }

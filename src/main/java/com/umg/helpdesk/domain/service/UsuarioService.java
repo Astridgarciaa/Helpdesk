@@ -22,6 +22,5 @@ public class UsuarioService {
         usuarioSoap.setTipoUsuario(usuario.getTipoUsuario());
         return usuarioSoap;
     }
-
-
+    
 }

@@ -5,7 +5,7 @@
     <xs:element name="getSolicitanteByUsuarioIdRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="usuarioId" type="xs:string"/>
+                <xs:element name="usuarioId" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

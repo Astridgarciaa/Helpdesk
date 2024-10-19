@@ -38,4 +38,13 @@ public class SolicitanteRepository {
     }
 
 
+    public SolicitanteEntity SolicitanteByUsuarioId(int usuarioId) {
+        return null;
+    }
+
+    public SolicitanteEntity SolicitanteByCorreo(String correo) {return null;}
+
+    public SolicitanteEntity SolicitanteById(String solicitanteId) {
+        return null;
+    }
 }

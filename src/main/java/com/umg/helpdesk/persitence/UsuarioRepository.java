@@ -33,4 +33,12 @@ public class UsuarioRepository {
     public void delete(Integer id) {
         usuarioCrudRepository.deleteById(id);
     }
+
+    public UsuarioEntity SolicitanteByUsuarioId(int usuarioId) {
+        return null;
+    }
+
+    public UsuarioEntity UsuarioByNombre(String nombreDeUsuario) {
+        return null;
+    }
 }

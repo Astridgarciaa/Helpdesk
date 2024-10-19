@@ -13,14 +13,15 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario getByUsername(String nombreDeUsuario) {
-        UsuarioEntity usuario = usuarioRepository.getByUsername(nombreDeUsuario);
+    public Usuario getNombreDeUsuario(String nombreDeUsuario) {
+        UsuarioEntity usuario = usuarioRepository.UsuarioByNombre(nombreDeUsuario);
         Usuario usuarioSoap = new Usuario();
         usuarioSoap.setUsuarioId(usuario.getUsuarioId());
         usuarioSoap.setNombreUsuario(usuario.getNombreUsuario());
         usuarioSoap.setPassword(usuario.getPassword());
         usuarioSoap.setTipoUsuario(usuario.getTipoUsuario());
         return usuarioSoap;
+
     }
-    
+
 }

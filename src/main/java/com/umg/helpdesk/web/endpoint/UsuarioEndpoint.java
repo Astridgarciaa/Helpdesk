@@ -26,7 +26,7 @@ public class UsuarioEndpoint {
     @ResponsePayload
     public GetUsuarioByNombreResponse getUsuario(@RequestPayload GetUsuarioByNombreRequest request) {
         GetUsuarioByNombreResponse response = new GetUsuarioByNombreResponse();
-        Usuario usuario = usuarioService.getByUsername(request.getNombreDeUsuario());
+        Usuario usuario = usuarioService.getNombreDeUsuario(request.getNombreDeUsuario());
         response.setUsuario(usuario);
         return response;
     }

@@ -28,7 +28,7 @@
     <xs:element name="getAtencionALaIncidenciaByticketIdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="atencionalancidencia" type="tns:atencionALaIncidencia"/>
+                <xs:element name="atencionalancidencia" type="tns:atencionALaIncidencia" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

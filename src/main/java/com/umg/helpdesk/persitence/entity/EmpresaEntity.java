@@ -17,8 +17,6 @@ public class EmpresaEntity {
 
     private String direccion;
 
-    @OneToMany(mappedBy = "empresaEntity")
-    private List<EmpleadoEntity> empleados;
 
     public Integer getEmpresaId() {
         return empresaId;
@@ -42,13 +40,5 @@ public class EmpresaEntity {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public List<EmpleadoEntity> getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(List<EmpleadoEntity> empleados) {
-        this.empleados = empleados;
     }
 }

@@ -10,6 +10,10 @@ import java.util.List;
 public class EmpresaRepository {
     private EmpresaCrudRepository empresaCrudRepository;
 
+    public EmpresaRepository(EmpresaCrudRepository empresaCrudRepository) {
+        this.empresaCrudRepository = empresaCrudRepository;
+    }
+
     public List<EmpresaEntity> getAll() {
         return (List<EmpresaEntity>) empresaCrudRepository.findAll();
     }

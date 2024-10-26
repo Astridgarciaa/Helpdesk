@@ -52,5 +52,20 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     public XsdSchema empleadosSchema() {
         return new SimpleXsdSchema(new ClassPathResource("empleados.xsd"));
     }
+
+    @Bean(name = "empresas")
+    public DefaultWsdl11Definition defaultWsdl11Definition3(XsdSchema empresasSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("EmpresasPort");
+        wsdl11Definition.setLocationUri("/ws/empresas");
+        wsdl11Definition.setTargetNamespace("http://umg.com/soapservice");
+        wsdl11Definition.setSchema(empresasSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema empresasSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("empresas.xsd"));
+    }
 }
 

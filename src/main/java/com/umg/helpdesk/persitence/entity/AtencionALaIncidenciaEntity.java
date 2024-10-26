@@ -14,7 +14,7 @@ public class AtencionALaIncidenciaEntity  {
     private String observaciones;
 
     @Column(name = "fecha")
-    private String feha;
+    private String fecha;
 
     @ManyToOne
     @JoinColumn(name = "ticket_id", insertable = false, updatable = false)
@@ -36,12 +36,12 @@ public class AtencionALaIncidenciaEntity  {
         this.observaciones = observaciones;
     }
 
-    public String getFeha() {
-        return feha;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setFeha(String feha) {
-        this.feha = feha;
+    public void setFecha(String feha) {
+        this.fecha = feha;
     }
 
     public TicketEntity getTicketEntity() {

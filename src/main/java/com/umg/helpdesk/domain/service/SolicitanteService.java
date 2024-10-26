@@ -17,7 +17,7 @@ public class SolicitanteService {
     }
 
     // Buscar solicitante por ID
-    public Solicitante getById(int solicitanteId) {
+    public Solicitante getSolicitanteById(int solicitanteId) {
         SolicitanteEntity solicitanteEntity = solicitanteRepository.getById(solicitanteId);
         Solicitante solicitante = new Solicitante();
         solicitante.setSolicitanteId(solicitanteEntity.getSolicitanteId());
@@ -30,7 +30,7 @@ public class SolicitanteService {
     }
 
     // Buscar solicitante por usuario ID
-    public Solicitante getByUsuarioId(int usuarioId) {
+    public Solicitante getSolicitanteByUsuarioId(int usuarioId) {
         SolicitanteEntity solicitanteEntity = solicitanteRepository.findByUsuarioEntityUsuarioId(usuarioId);
         Solicitante solicitante = new Solicitante();
         solicitante.setSolicitanteId(solicitanteEntity.getSolicitanteId());
@@ -43,7 +43,7 @@ public class SolicitanteService {
     }
 
     // Buscar solicitante por correo
-    public Solicitante getByCorreo(String correo) {
+    public Solicitante getSolicitanteByCorreo(String correo) {
         SolicitanteEntity solicitanteEntity = solicitanteRepository.findByCorreo(correo);
 
             Solicitante solicitante = new Solicitante();

@@ -26,7 +26,7 @@ public class IncidenteEndpoint {
     @ResponsePayload
     public GetIncidenteByIdResponse getIncidenteById(@RequestPayload GetIncidenteByIdRequest request) {
         GetIncidenteByIdResponse response = new GetIncidenteByIdResponse();
-        int incidenteId = Integer.parseInt(request.getIncidenteId());
+        int incidenteId = request.getIncidenteId();
         Incidente incidente = incidenteService.getById(incidenteId);
         response.setIncidente(incidente);
         return response;

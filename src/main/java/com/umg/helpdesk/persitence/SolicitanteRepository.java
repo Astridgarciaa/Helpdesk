@@ -29,7 +29,7 @@ public class SolicitanteRepository {
         return solicitanteCrudRepository.findByCorreo(correo);
     }
 
-    public SolicitanteEntity findByUsuarioEntityByUsuarioId(Integer usuarioId){
+    public SolicitanteEntity findByUsuarioEntityUsuarioId(Integer usuarioId){
         return solicitanteCrudRepository.findByUsuarioEntityUsuarioId (usuarioId);
     }
 
@@ -38,4 +38,13 @@ public class SolicitanteRepository {
     }
 
 
+    public SolicitanteEntity SolicitanteByUsuarioId(int usuarioId) {
+        return null;
+    }
+
+    public SolicitanteEntity SolicitanteByCorreo(String correo) {return null;}
+
+    public SolicitanteEntity SolicitanteById(String solicitanteId) {
+        return null;
+    }
 }

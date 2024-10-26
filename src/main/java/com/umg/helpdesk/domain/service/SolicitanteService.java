@@ -43,11 +43,9 @@ public class SolicitanteService {
     }
 
     // Buscar solicitante por correo
-    public List<Solicitante> getByCorreo(String correo) {
-        List<SolicitanteEntity> solicitantesEntity = solicitanteRepository.findByCorreo(correo);
-        List<Solicitante> solicitantes = new ArrayList<>();
+    public Solicitante getByCorreo(String correo) {
+        SolicitanteEntity solicitanteEntity = solicitanteRepository.findByCorreo(correo);
 
-        solicitantesEntity.forEach(solicitanteEntity -> {
             Solicitante solicitante = new Solicitante();
             solicitante.setSolicitanteId(solicitanteEntity.getSolicitanteId());
             solicitante.setNombreSolicitante(solicitanteEntity.getNombre());
@@ -55,9 +53,7 @@ public class SolicitanteService {
             solicitante.setCorreo(solicitanteEntity.getCorreo());
             solicitante.setTelefono(solicitanteEntity.getTelefono());
             solicitante.setUsuarioId(solicitanteEntity.getUsuarioEntity().getUsuarioId());
-            solicitantes.add(solicitante);
-        });
 
-        return solicitantes;
+        return solicitante;
     }
 }

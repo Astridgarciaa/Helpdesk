@@ -22,7 +22,7 @@
     </xs:element>
 
     <!-- buscar usuario por nombre de usuario -->
-    <xs:element name="getUsuarioByIdRequest">
+    <xs:element name="getUsuarioByNombreRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nombreDeUsuario" type="xs:string"/>
@@ -30,7 +30,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getUsuarioByIdResponse">
+    <xs:element name="getUsuarioByNombreResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="usuario" type="tns:usuario"/>

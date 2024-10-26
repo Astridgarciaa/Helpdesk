@@ -37,7 +37,7 @@
             <xs:sequence>
                 <xs:element name="atencionId" type="xs:int"/>
                 <xs:element name="observaciones" type="xs:string"/>
-                <xs:element name="fecha" type="xs:date"/>
+                <xs:element name="fecha" type="xs:string"/>
                 <xs:element name="ticketId" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>

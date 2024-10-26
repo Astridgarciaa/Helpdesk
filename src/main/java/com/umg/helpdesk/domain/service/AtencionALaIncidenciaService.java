@@ -22,8 +22,8 @@ public class AtencionALaIncidenciaService {
         AtencionALaIncidencia atencion = new AtencionALaIncidencia();
         atencion.setAtencionId(atencionEntity.getAtencionId());
         atencion.setObservaciones(atencionEntity.getObservaciones());
-     //   atencion.setFecha(atencionEntity.getFecha());
-     //   atencion.setTicketId(atencionEntity.getTicketId());
+        atencion.setFecha(atencionEntity.getFecha());
+        atencion.setTicketId(atencionEntity.getTicketEntity().getTicketId());
         return atencion;
     }
 
@@ -36,8 +36,8 @@ public class AtencionALaIncidenciaService {
             AtencionALaIncidencia atencion = new AtencionALaIncidencia();
             atencion.setAtencionId(atencionEntity.getAtencionId());
             atencion.setObservaciones(atencionEntity.getObservaciones());
-        //    atencion.setFecha(atencionEntity.getFecha());
-       //     atencion.setTicketId(atencionEntity.getTicketId());
+            atencion.setFecha(atencionEntity.getFecha());
+            atencion.setTicketId(atencionEntity.getTicketEntity().getTicketId());
             atenciones.add(atencion);
         });
 
